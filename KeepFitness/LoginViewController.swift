@@ -9,11 +9,10 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-    //MARK: 
-    @IBOutlet weak var Login: UIButton!
-    @IBOutlet weak var ForgetPassword: UIButton!
-
-    @IBOutlet weak var SignUp: UIButton!
+    //MARK: Properties
+    @IBOutlet weak var UserName: UITextField!
+    @IBOutlet weak var PassWord: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,9 +26,24 @@ class LoginViewController: UIViewController {
     
 
     //MARK: Action
-    @IBAction func LoginBtn(sender: AnyObject){
-        
+    @IBAction func Login(_ sender: AnyObject) {
+        if UserName.text == "111" {
+            print("login fail")
+            self.performSegue(withIdentifier: "login", sender: self)
+        }
+        else {
+            print("login fail")
+        }
     }
+    @IBAction func Forget(_ sender: UIButton) {
+        print("forget")
+    }
+    @IBAction func SignUp(_ sender: UIButton) {
+        print("SignUp")
+    }
+    
+  
+    
     
     /*
     // MARK: - Navigation
