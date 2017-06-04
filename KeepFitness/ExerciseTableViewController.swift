@@ -17,7 +17,7 @@ class ExerciseTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.leftBarButtonItem = editButtonItem
+        //navigationItem.leftBarButtonItem = editButtonItem
         
         if let saveExercises = loadExercises() {
             exercises += saveExercises
@@ -149,6 +149,9 @@ class ExerciseTableViewController: UITableViewController {
             }
             saveExercises()
         }
+    }
+    @IBAction func Back(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
     }
     
     //MARK: Private Methods
