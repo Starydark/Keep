@@ -13,6 +13,8 @@
 		182A09D11EE2D11F0036B91F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 182A09CF1EE2D11F0036B91F /* LaunchScreen.storyboard */; };
 		182A09DC1EE2D11F0036B91F /* KeepFitnessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182A09DB1EE2D11F0036B91F /* KeepFitnessTests.swift */; };
 		182A09E71EE2E5320036B91F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182A09E61EE2E5320036B91F /* LoginViewController.swift */; };
+		182F909C1EE57E270001CE2D /* PlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182F909B1EE57E270001CE2D /* PlanViewController.swift */; };
+		182F909E1EE593290001CE2D /* ExerciseListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182F909D1EE593290001CE2D /* ExerciseListTableViewController.swift */; };
 		18A2933E1EE3EB4E0063846D /* ExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A2933D1EE3EB4E0063846D /* ExerciseViewController.swift */; };
 		18A293401EE3FE490063846D /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A2933F1EE3FE490063846D /* Exercise.swift */; };
 		18A293421EE40C680063846D /* ExerciseListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A293411EE40C680063846D /* ExerciseListTableViewCell.swift */; };
@@ -40,6 +42,8 @@
 		182A09DB1EE2D11F0036B91F /* KeepFitnessTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeepFitnessTests.swift; sourceTree = "<group>"; };
 		182A09DD1EE2D11F0036B91F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		182A09E61EE2E5320036B91F /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		182F909B1EE57E270001CE2D /* PlanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanViewController.swift; sourceTree = "<group>"; };
+		182F909D1EE593290001CE2D /* ExerciseListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseListTableViewController.swift; sourceTree = "<group>"; };
 		18A2933D1EE3EB4E0063846D /* ExerciseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseViewController.swift; sourceTree = "<group>"; };
 		18A2933F1EE3FE490063846D /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		18A293411EE40C680063846D /* ExerciseListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseListTableViewCell.swift; sourceTree = "<group>"; };
@@ -86,10 +90,12 @@
 			isa = PBXGroup;
 			children = (
 				182A09C61EE2D11F0036B91F /* AppDelegate.swift */,
+				182F909B1EE57E270001CE2D /* PlanViewController.swift */,
 				18A2933F1EE3FE490063846D /* Exercise.swift */,
 				18A2933D1EE3EB4E0063846D /* ExerciseViewController.swift */,
 				18A293411EE40C680063846D /* ExerciseListTableViewCell.swift */,
 				18A293431EE40EFA0063846D /* ExerciseTableViewController.swift */,
+				182F909D1EE593290001CE2D /* ExerciseListTableViewController.swift */,
 				182A09E61EE2E5320036B91F /* LoginViewController.swift */,
 				182A09CA1EE2D11F0036B91F /* Main.storyboard */,
 				182A09CD1EE2D11F0036B91F /* Assets.xcassets */,
@@ -158,6 +164,7 @@
 				TargetAttributes = {
 					182A09C21EE2D11F0036B91F = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = Z8QEVUB4LB;
 						ProvisioningStyle = Automatic;
 					};
 					182A09D61EE2D11F0036B91F = {
@@ -214,6 +221,8 @@
 				182A09E71EE2E5320036B91F /* LoginViewController.swift in Sources */,
 				18A293401EE3FE490063846D /* Exercise.swift in Sources */,
 				18A2933E1EE3EB4E0063846D /* ExerciseViewController.swift in Sources */,
+				182F909E1EE593290001CE2D /* ExerciseListTableViewController.swift in Sources */,
+				182F909C1EE57E270001CE2D /* PlanViewController.swift in Sources */,
 				18A293421EE40C680063846D /* ExerciseListTableViewCell.swift in Sources */,
 				182A09C71EE2D11F0036B91F /* AppDelegate.swift in Sources */,
 				18A293441EE40EFA0063846D /* ExerciseTableViewController.swift in Sources */,
@@ -355,6 +364,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = Z8QEVUB4LB;
 				INFOPLIST_FILE = KeepFitness/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.edu.nju.KeepFitness;
@@ -367,6 +377,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = Z8QEVUB4LB;
 				INFOPLIST_FILE = KeepFitness/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.edu.nju.KeepFitness;

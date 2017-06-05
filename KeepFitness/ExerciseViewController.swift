@@ -25,6 +25,11 @@ class ExerciseViewController: UIViewController, UITextFieldDelegate, UIImagePick
     override func viewDidLoad() {
         super.viewDidLoad()
         Name.delegate = self
+        var rect: CGRect
+        rect =  Name.frame
+        rect.size.height = 50
+        Name.frame = rect
+        Action.delegate = self
         
         if let exercise = exercise {
             navigationItem.title = exercise.Name
@@ -54,7 +59,9 @@ class ExerciseViewController: UIViewController, UITextFieldDelegate, UIImagePick
 
     //MARK: UITextFieldDelegate
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        Name.resignFirstResponder()
+        //Hide the keyboard
+        textField.resignFirstResponder()
+        
         return true
     }
     func textFieldDidEndEditing(_ textField: UITextField) {

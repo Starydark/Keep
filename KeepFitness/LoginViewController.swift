@@ -8,14 +8,15 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate{
     //MARK: Properties
     @IBOutlet weak var UserName: UITextField!
     @IBOutlet weak var PassWord: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        UserName.delegate = self
+        PassWord.delegate = self
         // Do any additional setup after loading the view.
     }
 
@@ -24,6 +25,14 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    //MARK: UITextFieldDelegate
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        
+    }
 
     //MARK: Action
     @IBAction func Login(_ sender: AnyObject) {
