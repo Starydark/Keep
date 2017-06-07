@@ -13,6 +13,7 @@ class ExerciseTableViewController: UITableViewController {
 
     //MARK: Properties
     var exercises = [Exercise]()
+    @IBOutlet weak var back: UIBarButtonItem!
     
     
     override func viewDidLoad() {
@@ -47,7 +48,6 @@ class ExerciseTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return exercises.count
     }
-
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = "ExerciseListTableViewCell"
@@ -128,8 +128,9 @@ class ExerciseTableViewController: UITableViewController {
             
             let selectedExercise = exercises[indexPath.row]
             exerciseDetailViewController.exercise = selectedExercise
-        default:
-            fatalError("Unexpected Segue Identifier; \(segue.identifier)")
+        default: break
+            //print("error\(segue.identifier)")
+            //fatalError("Unexpected Segue Identifier; \(segue.identifier)")
         }
     }
     

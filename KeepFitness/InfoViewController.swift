@@ -1,22 +1,22 @@
 //
-//  PlanViewController.swift
+//  InfoViewController.swift
 //  KeepFitness
 //
-//  Created by Apple on 2017/6/5.
+//  Created by Apple on 2017/6/7.
 //  Copyright © 2017年 nju. All rights reserved.
 //
 
 import UIKit
 
-class PlanViewController: UIViewController {
+class InfoViewController: UIViewController {
 
-    //MARK: Properties
-    //@IBOutlet weak var contain: UIView!
-    @IBOutlet weak var contain: UIView!
-    
+    @IBOutlet weak var Image: UIImageView!
+    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var aciont: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.Image.layer.cornerRadius = self.Image.bounds.height / 4
+        //self.Image.contentMode = UIViewContentMode.center
         // Do any additional setup after loading the view.
     }
 
@@ -25,18 +25,7 @@ class PlanViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    //MARK: Action
-    
-    @IBAction func unwindExerciseList(sender: UIStoryboardSegue){
-        let exerciseController = ExerciseListTableViewController()
-        exerciseController.tableView.reloadData()
-        contain.reloadInputViews()
-    }
-    
-    private func loadExercises() -> [Exercise]? {
-        return NSKeyedUnarchiver.unarchiveObject(withFile: Exercise.ArchiverURL.path) as? [Exercise]
-    }
-    
+
     /*
     // MARK: - Navigation
 

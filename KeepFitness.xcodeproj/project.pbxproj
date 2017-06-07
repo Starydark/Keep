@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18216A351EE7FAB8009D3396 /* PersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18216A341EE7FAB8009D3396 /* PersonViewController.swift */; };
+		18216A371EE83834009D3396 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18216A361EE83834009D3396 /* InfoViewController.swift */; };
 		182A09C71EE2D11F0036B91F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182A09C61EE2D11F0036B91F /* AppDelegate.swift */; };
 		182A09CC1EE2D11F0036B91F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 182A09CA1EE2D11F0036B91F /* Main.storyboard */; };
 		182A09CE1EE2D11F0036B91F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 182A09CD1EE2D11F0036B91F /* Assets.xcassets */; };
@@ -19,6 +21,8 @@
 		18A293401EE3FE490063846D /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A2933F1EE3FE490063846D /* Exercise.swift */; };
 		18A293421EE40C680063846D /* ExerciseListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A293411EE40C680063846D /* ExerciseListTableViewCell.swift */; };
 		18A293441EE40EFA0063846D /* ExerciseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A293431EE40EFA0063846D /* ExerciseTableViewController.swift */; };
+		18E3999F1EE6E1210012FF7E /* InfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E3999D1EE6E1210012FF7E /* InfoTableViewCell.swift */; };
+		18E399A01EE6E1210012FF7E /* InfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18E3999E1EE6E1210012FF7E /* InfoTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		18216A341EE7FAB8009D3396 /* PersonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonViewController.swift; sourceTree = "<group>"; };
+		18216A361EE83834009D3396 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		182A09C31EE2D11F0036B91F /* KeepFitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KeepFitness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		182A09C61EE2D11F0036B91F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		182A09CB1EE2D11F0036B91F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -48,6 +54,8 @@
 		18A2933F1EE3FE490063846D /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		18A293411EE40C680063846D /* ExerciseListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseListTableViewCell.swift; sourceTree = "<group>"; };
 		18A293431EE40EFA0063846D /* ExerciseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseTableViewController.swift; sourceTree = "<group>"; };
+		18E3999D1EE6E1210012FF7E /* InfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoTableViewCell.swift; sourceTree = "<group>"; };
+		18E3999E1EE6E1210012FF7E /* InfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfoTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,14 +98,18 @@
 			isa = PBXGroup;
 			children = (
 				182A09C61EE2D11F0036B91F /* AppDelegate.swift */,
+				182A09E61EE2E5320036B91F /* LoginViewController.swift */,
 				182F909B1EE57E270001CE2D /* PlanViewController.swift */,
 				18A2933F1EE3FE490063846D /* Exercise.swift */,
 				18A2933D1EE3EB4E0063846D /* ExerciseViewController.swift */,
 				18A293411EE40C680063846D /* ExerciseListTableViewCell.swift */,
 				18A293431EE40EFA0063846D /* ExerciseTableViewController.swift */,
 				182F909D1EE593290001CE2D /* ExerciseListTableViewController.swift */,
-				182A09E61EE2E5320036B91F /* LoginViewController.swift */,
 				182A09CA1EE2D11F0036B91F /* Main.storyboard */,
+				18216A341EE7FAB8009D3396 /* PersonViewController.swift */,
+				18216A361EE83834009D3396 /* InfoViewController.swift */,
+				18E3999D1EE6E1210012FF7E /* InfoTableViewCell.swift */,
+				18E3999E1EE6E1210012FF7E /* InfoTableViewCell.xib */,
 				182A09CD1EE2D11F0036B91F /* Assets.xcassets */,
 				182A09CF1EE2D11F0036B91F /* LaunchScreen.storyboard */,
 				182A09D21EE2D11F0036B91F /* Info.plist */,
@@ -199,6 +211,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				182A09D11EE2D11F0036B91F /* LaunchScreen.storyboard in Resources */,
+				18E399A01EE6E1210012FF7E /* InfoTableViewCell.xib in Resources */,
 				182A09CE1EE2D11F0036B91F /* Assets.xcassets in Resources */,
 				182A09CC1EE2D11F0036B91F /* Main.storyboard in Resources */,
 			);
@@ -219,10 +232,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				182A09E71EE2E5320036B91F /* LoginViewController.swift in Sources */,
+				18216A371EE83834009D3396 /* InfoViewController.swift in Sources */,
 				18A293401EE3FE490063846D /* Exercise.swift in Sources */,
 				18A2933E1EE3EB4E0063846D /* ExerciseViewController.swift in Sources */,
+				18E3999F1EE6E1210012FF7E /* InfoTableViewCell.swift in Sources */,
 				182F909E1EE593290001CE2D /* ExerciseListTableViewController.swift in Sources */,
 				182F909C1EE57E270001CE2D /* PlanViewController.swift in Sources */,
+				18216A351EE7FAB8009D3396 /* PersonViewController.swift in Sources */,
 				18A293421EE40C680063846D /* ExerciseListTableViewCell.swift in Sources */,
 				182A09C71EE2D11F0036B91F /* AppDelegate.swift in Sources */,
 				18A293441EE40EFA0063846D /* ExerciseTableViewController.swift in Sources */,

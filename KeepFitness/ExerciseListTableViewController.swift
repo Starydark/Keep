@@ -15,13 +15,10 @@ class ExerciseListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //if let saveExercises = loadExercises() {
-            //exercises += saveExercises
-        exercises = loadExercises()!
-        //}
-       // else {
-            
-       // }
+        if let saveExercises = loadExercises() {
+            exercises = saveExercises
+        }
+       
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -29,6 +26,8 @@ class ExerciseListTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -64,7 +63,18 @@ class ExerciseListTableViewController: UITableViewController {
         return cell
     }
     
+    //MARK: Actions
+    public func updateList() {
+        if let saveExercises = loadExercises() {
+            exercises = saveExercises
+        }
+        let newIndexpath = IndexPath(row: 0, section: 0)
+        tableView.reloadRows(at: [newIndexpath], with: .none)
+        
+    }
 
+    
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

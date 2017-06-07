@@ -66,7 +66,7 @@ class ExerciseViewController: UIViewController, UITextFieldDelegate, UIImagePick
     }
     func textFieldDidEndEditing(_ textField: UITextField) {
         updateSaveButtonState()
-        navigationItem.title = textField.text
+        navigationItem.title = Name.text
     }
     func textFieldDidBeginEditing(_ textField: UITextField) {
         saveButton.isEnabled = false
