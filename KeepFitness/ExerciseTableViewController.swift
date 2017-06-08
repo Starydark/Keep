@@ -14,12 +14,12 @@ class ExerciseTableViewController: UITableViewController {
     //MARK: Properties
     var exercises = [Exercise]()
     @IBOutlet weak var back: UIBarButtonItem!
-    
+    let cellIdentifier = "ExerciseID"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //navigationItem.leftBarButtonItem = editButtonItem
-        
+        self.tableView.register(UINib(nibName: "ExerciseTableViewCell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
         if let saveExercises = loadExercises() {
             exercises += saveExercises
         }
@@ -50,11 +50,18 @@ class ExerciseTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellIdentifier = "ExerciseListTableViewCell"
+        /*let cellIdentifier = "ExerciseListTableViewCell"
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? ExerciseListTableViewCell else {
             fatalError("Ther dequeued cell is not an instance of ExerciseListTableViewCell.")
+        }*/
+        
+        var cell:ExerciseTableViewCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as! ExerciseTableViewCell
+        if (cell == nil){
+            cell = ExerciseTableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: cellIdentifier)
         }
+
+        
 
         let exercise  = exercises[indexPath.row]
         

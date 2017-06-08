@@ -129,6 +129,9 @@ class PersonViewController: UIViewController, UITableViewDelegate, UITableViewDa
             let controller = segue.destination as! ExerciseTableViewController
             controller.title = sender as? String
         }
+        else {
+            print(segue.identifier)
+        }
     }
     
     override func didReceiveMemoryWarning() {

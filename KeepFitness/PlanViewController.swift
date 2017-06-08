@@ -8,29 +8,74 @@
 
 import UIKit
 
-class PlanViewController: UIViewController {
+class PlanViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     //MARK: Properties
     //@IBOutlet weak var contain: UIView!
-    @IBOutlet weak var contain: UIView!
+    @IBOutlet weak var ExerciseCell: UITableView!
+    
+    var exercises = [Exercise]()
+    let cellIdentifier = "ExerciseID"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
+        self.ExerciseCell!.delegate = self
+        self.ExerciseCell!.dataSource = self
+        self.ExerciseCell.register(UINib(nibName: "ExerciseTableViewCell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
+        if let saveExercises = loadExercises() {
+            exercises = saveExercises
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    //MARK: TableView
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 90
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        var cell:ExerciseTableViewCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as! ExerciseTableViewCell
+        if (cell == nil){
+            cell = ExerciseTableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: cellIdentifier)
+        }
+        if indexPath.row < exercises.count {
+            let exercise  = exercises[indexPath.row]
+        
+            cell.Action.text = exercise.Name
+            cell.photo.image = exercise.photo
+            cell.time.text = exercise.StartTime
+            // Configure the cell...
+        }
+        else {
+            cell.Action.text = ""
+            cell.time.text = ""
+            cell.photo.image = UIImage(named: "exercise1")
+        }
+        return cell
+    }
     
     //MARK: Action
     
     @IBAction func unwindExerciseList(sender: UIStoryboardSegue){
         let exerciseController = ExerciseListTableViewController()
-        exerciseController.tableView.reloadData()
-        contain.reloadInputViews()
+        if let saveExercises = loadExercises() {
+            exercises = saveExercises
+        }
+        self.ExerciseCell.reloadData()
+       
     }
     
     private func loadExercises() -> [Exercise]? {
@@ -46,5 +91,4 @@ class PlanViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }
