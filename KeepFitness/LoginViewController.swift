@@ -13,10 +13,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
     @IBOutlet weak var UserName: UITextField!
     @IBOutlet weak var PassWord: UITextField!
     
+    var LoginId: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         UserName.delegate = self
         PassWord.delegate = self
+        LoginId = UserName.text!
         // Do any additional setup after loading the view.
     }
 
@@ -34,10 +37,25 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
         
     }
 
+    //create foler to store info
+    func createFolder(name: String){
+        let fileManager = FileManager.default
+        //let urlForDocument = fileManager.urls(for: .documentDirectory, in: .userDomainMask)
+        //let url = urlForDocument[0] as NSURL
+        let filePath:String = NSHomeDirectory() + name;
+        let exist = fileManager.fileExists(atPath: filePath)
+        if !exist {
+            try! fileManager.createDirectory(atPath: filePath, withIntermediateDirectories: true, attributes: nil)
+            print("创建目录成功")
+        }
+        
+    }
+    
     //MARK: Action
     @IBAction func Login(_ sender: AnyObject) {
         if UserName.text == "111" {
-            print("login fail")
+            createFolder(name: "111")
+            LoginId = UserName.text!
             self.performSegue(withIdentifier: "login", sender: self)
         }
         else {

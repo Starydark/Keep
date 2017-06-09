@@ -11,12 +11,14 @@ import UIKit
 class ExerciseListTableViewController: UITableViewController {
 
     var exercises = [Exercise]()
+    let cellIdentifier = "ExerciseID"
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.tableView.register(UINib(nibName: "ExerciseTableViewCell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
         if let saveExercises = loadExercises() {
-            exercises = saveExercises
+            exercises += saveExercises
         }
        
         // Uncomment the following line to preserve selection between presentations
@@ -45,12 +47,14 @@ class ExerciseListTableViewController: UITableViewController {
         return exercises.count
     }
 
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "StartExercise", sender: self)
+    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellIdentifier = "ExerciseListTableViewCell"
-        
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? ExerciseListTableViewCell else {
-            fatalError("Ther dequeued cell is not an instance of ExerciseListTableViewCell.")
+        var cell:ExerciseTableViewCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as! ExerciseTableViewCell
+        if (cell == nil){
+            cell = ExerciseTableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: cellIdentifier)
         }
         
         let exercise  = exercises[indexPath.row]
@@ -110,18 +114,21 @@ class ExerciseListTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        super.prepare(for: segue, sender: sender)
+        //print("yes")
+        if segue.identifier == "StartExercise" {
+            let controller = segue.destination as! TimeViewController
+        }
     }
-    */
+    
 
     //MARK: Private Methods
     private func loadExercises() -> [Exercise]? {
-        return NSKeyedUnarchiver.unarchiveObject(withFile: Exercise.ArchiverURL.path) as? [Exercise]
+        return NSKeyedUnarchiver.unarchiveObject(withFile: (Exercise.ArchiverURL?.path)!) as? [Exercise]
     }
 }

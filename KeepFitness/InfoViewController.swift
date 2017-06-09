@@ -65,11 +65,12 @@ class InfoViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //super.prepare(for: segue, sender: sender)
         if segue.identifier == "ShowDetail" {
-            print("yes")
-            guard let controller = segue.destination as? DetailViewController else {
+            //print("yes")
+            let nav = segue.destination as! UINavigationController
+            guard let controller = nav.topViewController as? DetailViewController else {
                 fatalError("Unexpected destination: \(sender)")
             }
-            print(index)
+            //print(index)
             controller.titleName = tableData[index]
             controller.titleValue = (sender as? String)!
         }

@@ -122,7 +122,8 @@ class PersonViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowInfo" {
-            let controller = segue.destination as! InfoViewController
+            let nav = segue.destination as! UINavigationController
+            let controller = nav.topViewController as! InfoViewController
             controller.title = sender as? String
         }
         else if segue.identifier == "ShowTable" {

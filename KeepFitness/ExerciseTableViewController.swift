@@ -72,8 +72,6 @@ class ExerciseTableViewController: UITableViewController {
 
         return cell
     }
- 
-
     
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -81,7 +79,18 @@ class ExerciseTableViewController: UITableViewController {
         return true
     }
  
-
+    //点击代理
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //tableView.deselectRow(at: indexPath, animated: true)
+        
+        if let selectedIndexpath = tableView.indexPathForSelectedRow {
+            print("choose\(selectedIndexpath.row)")
+        }
+        else {
+            print("chse\(indexPath.row)")
+        }
+        self.performSegue(withIdentifier: "ShowDetail", sender: indexPath)
+    }
     
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
@@ -124,16 +133,10 @@ class ExerciseTableViewController: UITableViewController {
             guard let exerciseDetailViewController = segue.destination as? ExerciseViewController else {
                 fatalError("Unexpected destination: \(segue.destination)")
             }
-            
-            guard let selectedExerciseCell = sender as? ExerciseListTableViewCell else {
-                fatalError("Unexpected sender: \(sender)")
-            }
-            
-            guard let indexPath = tableView.indexPath(for: selectedExerciseCell) else {
+            guard let indexPath = sender else {
                 fatalError("The selected cell is not being displayed by the table")
             }
-            
-            let selectedExercise = exercises[indexPath.row]
+            let selectedExercise = exercises[(indexPath as AnyObject).row]
             exerciseDetailViewController.exercise = selectedExercise
         default: break
             //print("error\(segue.identifier)")
@@ -141,16 +144,15 @@ class ExerciseTableViewController: UITableViewController {
         }
     }
     
-    
     //MARK: Actions
     @IBAction func unwindToExerciseList(sender: UIStoryboardSegue){
         if let sourceViewController = sender.source as? ExerciseViewController, let exercise = sourceViewController.exercise {
-            //Add a new Exercise
             if let selectedIndexpath = tableView.indexPathForSelectedRow {
                 exercises[selectedIndexpath.row] = exercise
                 tableView.reloadRows(at: [selectedIndexpath], with: .none)
             }
             else {
+                //Add a new Exercise
                 let newIndexPath = IndexPath(row: exercises.count, section: 0)
                 exercises.append(exercise)
                 tableView.insertRows(at: [newIndexPath], with: .automatic)
@@ -164,7 +166,7 @@ class ExerciseTableViewController: UITableViewController {
     
     //MARK: Private Methods
     private func saveExercises(){
-        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(exercises, toFile: Exercise.ArchiverURL.path)
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(exercises, toFile: (Exercise.ArchiverURL?.path)!)
         if isSuccessfulSave {
             os_log("Exercises successfully saved", log: OSLog.default, type: .debug)
         }
@@ -174,7 +176,7 @@ class ExerciseTableViewController: UITableViewController {
     }
     
     private func loadExercises() -> [Exercise]? {
-        return NSKeyedUnarchiver.unarchiveObject(withFile: Exercise.ArchiverURL.path) as? [Exercise]
+        return NSKeyedUnarchiver.unarchiveObject(withFile: (Exercise.ArchiverURL?.path)!) as? [Exercise]
     }
     
     private func loadSampleExercise() {

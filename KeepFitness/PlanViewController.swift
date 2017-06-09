@@ -13,15 +13,29 @@ class PlanViewController: UIViewController, UITableViewDelegate, UITableViewData
     //MARK: Properties
     //@IBOutlet weak var contain: UIView!
     @IBOutlet weak var ExerciseCell: UITableView!
+    //@IBOutlet weak var clickView: ClickView!
+   //  @IBOutlet weak var LoadExercise: UITableView!
+    @IBOutlet weak var clickView: UIView!
+    
     
     var exercises = [Exercise]()
     let cellIdentifier = "ExerciseID"
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.ExerciseCell!.delegate = self
         self.ExerciseCell!.dataSource = self
+        
+        //let tap = UITapGestureRecognizer(target: self, action: Selector(("tapClick")))
+        //self.clickView.isUserInteractionEnabled = true
+        //self.clickView.addGestureRecognizer(tap)
+        
+        //self.LoadExercise!.delegate = self
+        //self.LoadExercise!.dataSource = self
         self.ExerciseCell.register(UINib(nibName: "ExerciseTableViewCell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
+        //self.LoadExercise.register(UINib(nibName: "DetailTableViewCell"), bundle: nil), forCellReuseIdentifier: "
         if let saveExercises = loadExercises() {
             exercises = saveExercises
         }
@@ -45,6 +59,10 @@ class PlanViewController: UIViewController, UITableViewDelegate, UITableViewData
         return 90
     }
     
+    /*func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "Show", sender: self)
+    }*/
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         var cell:ExerciseTableViewCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as! ExerciseTableViewCell
@@ -66,7 +84,12 @@ class PlanViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         return cell
     }
-    
+    /*
+    //tap
+    func tapClick(sender: UIView){
+        print("beidianji")
+    }
+    */
     //MARK: Action
     
     @IBAction func unwindExerciseList(sender: UIStoryboardSegue){
@@ -79,16 +102,18 @@ class PlanViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     private func loadExercises() -> [Exercise]? {
-        return NSKeyedUnarchiver.unarchiveObject(withFile: Exercise.ArchiverURL.path) as? [Exercise]
+        return NSKeyedUnarchiver.unarchiveObject(withFile: (Exercise.ArchiverURL?.path)!) as? [Exercise]
     }
     
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        if segue.identifier == "Show"{
+            let controller = segue.destination as! TimeViewController
+        }
+    }*/
+    
 }

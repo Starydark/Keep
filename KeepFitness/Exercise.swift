@@ -17,8 +17,11 @@ class Exercise: NSObject, NSCoding {
     var StartTime: String
     var EndTime: String
     
-    static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
-    static let ArchiverURL = DocumentsDirectory.appendingPathComponent("exercises")
+    //static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
+    static let filePath: String = NSHomeDirectory() + LoginViewController().LoginId
+    
+    static let URL = NSURL(string: filePath)
+    static let ArchiverURL = URL?.appendingPathComponent("exercises")
     
     struct Propertykey {
         static let Name = "Name"

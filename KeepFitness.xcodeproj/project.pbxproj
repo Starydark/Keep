@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		181F4A391EEA987E0099150B /* TimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F4A381EEA987E0099150B /* TimeViewController.swift */; };
+		181F4A3C1EEAB8430099150B /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F4A3B1EEAB8430099150B /* CustomButton.swift */; };
+		181F4A3E1EEAB8720099150B /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F4A3D1EEAB8720099150B /* CustomView.swift */; };
+		181F4A421EEACB330099150B /* ClickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F4A411EEACB330099150B /* ClickView.swift */; };
+		181F4A441EEAD8C70099150B /* Infomation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F4A431EEAD8C70099150B /* Infomation.swift */; };
 		18216A351EE7FAB8009D3396 /* PersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18216A341EE7FAB8009D3396 /* PersonViewController.swift */; };
 		18216A371EE83834009D3396 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18216A361EE83834009D3396 /* InfoViewController.swift */; };
 		182A09C71EE2D11F0036B91F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182A09C61EE2D11F0036B91F /* AppDelegate.swift */; };
@@ -41,6 +46,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		181F4A381EEA987E0099150B /* TimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeViewController.swift; sourceTree = "<group>"; };
+		181F4A3B1EEAB8430099150B /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		181F4A3D1EEAB8720099150B /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		181F4A411EEACB330099150B /* ClickView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClickView.swift; sourceTree = "<group>"; };
+		181F4A431EEAD8C70099150B /* Infomation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Infomation.swift; sourceTree = "<group>"; };
 		18216A341EE7FAB8009D3396 /* PersonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonViewController.swift; sourceTree = "<group>"; };
 		18216A361EE83834009D3396 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		182A09C31EE2D11F0036B91F /* KeepFitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KeepFitness.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,6 +96,55 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		181F4A3A1EEAB8190099150B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				181F4A3B1EEAB8430099150B /* CustomButton.swift */,
+				181F4A3D1EEAB8720099150B /* CustomView.swift */,
+				181F4A411EEACB330099150B /* ClickView.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		181F4A3F1EEAB9CC0099150B /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				18A293411EE40C680063846D /* ExerciseListTableViewCell.swift */,
+				1886FDF01EE96F9500974B5F /* DetailTableViewCell.swift */,
+				1886FDF11EE96F9500974B5F /* DetailTableViewCell.xib */,
+				18E3999D1EE6E1210012FF7E /* InfoTableViewCell.swift */,
+				18E3999E1EE6E1210012FF7E /* InfoTableViewCell.xib */,
+				1886FDFA1EE996DE00974B5F /* ExerciseTableViewCell.swift */,
+				1886FDFB1EE996DE00974B5F /* ExerciseTableViewCell.xib */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
+		181F4A401EEABA110099150B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				182A09E61EE2E5320036B91F /* LoginViewController.swift */,
+				182F909B1EE57E270001CE2D /* PlanViewController.swift */,
+				18A2933D1EE3EB4E0063846D /* ExerciseViewController.swift */,
+				18A293431EE40EFA0063846D /* ExerciseTableViewController.swift */,
+				182F909D1EE593290001CE2D /* ExerciseListTableViewController.swift */,
+				18216A341EE7FAB8009D3396 /* PersonViewController.swift */,
+				181F4A381EEA987E0099150B /* TimeViewController.swift */,
+				18216A361EE83834009D3396 /* InfoViewController.swift */,
+				1886FDF81EE9844300974B5F /* DetailViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		181F4A451EEAD8D20099150B /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				18A2933F1EE3FE490063846D /* Exercise.swift */,
+				181F4A431EEAD8C70099150B /* Infomation.swift */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
 		182A09BA1EE2D11E0036B91F = {
 			isa = PBXGroup;
 			children = (
@@ -107,24 +166,12 @@
 		182A09C51EE2D11F0036B91F /* KeepFitness */ = {
 			isa = PBXGroup;
 			children = (
-				182A09C61EE2D11F0036B91F /* AppDelegate.swift */,
-				182A09E61EE2E5320036B91F /* LoginViewController.swift */,
-				182F909B1EE57E270001CE2D /* PlanViewController.swift */,
-				18A2933F1EE3FE490063846D /* Exercise.swift */,
-				18A2933D1EE3EB4E0063846D /* ExerciseViewController.swift */,
-				18A293411EE40C680063846D /* ExerciseListTableViewCell.swift */,
-				18A293431EE40EFA0063846D /* ExerciseTableViewController.swift */,
-				182F909D1EE593290001CE2D /* ExerciseListTableViewController.swift */,
+				181F4A401EEABA110099150B /* Controller */,
+				181F4A3F1EEAB9CC0099150B /* Cell */,
+				181F4A3A1EEAB8190099150B /* View */,
+				181F4A451EEAD8D20099150B /* Data */,
 				182A09CA1EE2D11F0036B91F /* Main.storyboard */,
-				18216A341EE7FAB8009D3396 /* PersonViewController.swift */,
-				18216A361EE83834009D3396 /* InfoViewController.swift */,
-				1886FDF81EE9844300974B5F /* DetailViewController.swift */,
-				1886FDF01EE96F9500974B5F /* DetailTableViewCell.swift */,
-				1886FDF11EE96F9500974B5F /* DetailTableViewCell.xib */,
-				18E3999D1EE6E1210012FF7E /* InfoTableViewCell.swift */,
-				18E3999E1EE6E1210012FF7E /* InfoTableViewCell.xib */,
-				1886FDFA1EE996DE00974B5F /* ExerciseTableViewCell.swift */,
-				1886FDFB1EE996DE00974B5F /* ExerciseTableViewCell.xib */,
+				182A09C61EE2D11F0036B91F /* AppDelegate.swift */,
 				182A09CD1EE2D11F0036B91F /* Assets.xcassets */,
 				182A09CF1EE2D11F0036B91F /* LaunchScreen.storyboard */,
 				182A09D21EE2D11F0036B91F /* Info.plist */,
@@ -249,13 +296,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				1886FDF91EE9844300974B5F /* DetailViewController.swift in Sources */,
+				181F4A391EEA987E0099150B /* TimeViewController.swift in Sources */,
 				182A09E71EE2E5320036B91F /* LoginViewController.swift in Sources */,
 				18216A371EE83834009D3396 /* InfoViewController.swift in Sources */,
+				181F4A3C1EEAB8430099150B /* CustomButton.swift in Sources */,
 				1886FDFC1EE996DE00974B5F /* ExerciseTableViewCell.swift in Sources */,
 				18A293401EE3FE490063846D /* Exercise.swift in Sources */,
 				18A2933E1EE3EB4E0063846D /* ExerciseViewController.swift in Sources */,
 				18E3999F1EE6E1210012FF7E /* InfoTableViewCell.swift in Sources */,
+				181F4A3E1EEAB8720099150B /* CustomView.swift in Sources */,
 				182F909E1EE593290001CE2D /* ExerciseListTableViewController.swift in Sources */,
+				181F4A421EEACB330099150B /* ClickView.swift in Sources */,
+				181F4A441EEAD8C70099150B /* Infomation.swift in Sources */,
 				1886FDF21EE96F9500974B5F /* DetailTableViewCell.swift in Sources */,
 				182F909C1EE57E270001CE2D /* PlanViewController.swift in Sources */,
 				18216A351EE7FAB8009D3396 /* PersonViewController.swift in Sources */,
