@@ -12,6 +12,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
     //MARK: Properties
     @IBOutlet weak var UserName: UITextField!
     @IBOutlet weak var PassWord: UITextField!
+    @IBOutlet weak var forget: UIButton!
+    @IBOutlet weak var register: UIButton!
     
     var LoginId: String = ""
     
@@ -38,39 +40,59 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
     }
 
     //create foler to store info
-    func createFolder(name: String){
-        let fileManager = FileManager.default
-        //let urlForDocument = fileManager.urls(for: .documentDirectory, in: .userDomainMask)
-        //let url = urlForDocument[0] as NSURL
-        let filePath:String = NSHomeDirectory() + name;
-        let exist = fileManager.fileExists(atPath: filePath)
-        if !exist {
-            try! fileManager.createDirectory(atPath: filePath, withIntermediateDirectories: true, attributes: nil)
-            print("创建目录成功")
+    func CorrectPassword(name: String) -> Bool{
+        let filePath:String = NSHomeDirectory() + "/" + name;
+        let URL = NSURL(string: filePath)
+        let ArchiverURL = URL?.appendingPathComponent("password")
+        let GetPassword = NSKeyedUnarchiver.unarchiveObject(withFile: (ArchiverURL?.path)!) as? String
+        if GetPassword == PassWord.text {
+            return true
         }
+        return false
         
+    }
+    
+    func UserExist(name: String) -> Bool {
+        let fileManager = FileManager.default
+        let filePath:String = NSHomeDirectory() + "/" + name;
+        print(filePath)
+        let exist = fileManager.fileExists(atPath: filePath)
+        if exist {
+            return true
+        }
+        else {
+            return false
+        }
     }
     
     //MARK: Action
     @IBAction func Login(_ sender: AnyObject) {
-        if UserName.text == "111" {
-            createFolder(name: "111")
+        let userId = UserName.text ?? ""
+        if userId.isEmpty{
+            let alert = UIAlertView(title: "错误", message: "用户名不能为空", delegate: self, cancelButtonTitle: "OK")
+            alert.show()
+        }
+        else if !UserExist(name: userId) {
+            let alert = UIAlertView(title: "错误", message: "用户不存在", delegate: self, cancelButtonTitle: "OK")
+            alert.show()
+        }
+        else if CorrectPassword(name: userId) {
             LoginId = UserName.text!
             self.performSegue(withIdentifier: "login", sender: self)
         }
         else {
-            print("login fail")
+            let alert = UIAlertView(title: "错误", message: "密码错误", delegate: self, cancelButtonTitle: "OK")
+            alert.show()
         }
     }
     @IBAction func Forget(_ sender: UIButton) {
-        print("forget")
+        self.performSegue(withIdentifier: "Register", sender: self)
+        //self.present(regView, animated: true, completion: nil)
     }
     @IBAction func SignUp(_ sender: UIButton) {
-        print("SignUp")
+        self.performSegue(withIdentifier: "Register", sender: self)
     }
-    
   
-    
     
     /*
     // MARK: - Navigation

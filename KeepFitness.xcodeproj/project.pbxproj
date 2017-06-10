@@ -11,7 +11,7 @@
 		181F4A3C1EEAB8430099150B /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F4A3B1EEAB8430099150B /* CustomButton.swift */; };
 		181F4A3E1EEAB8720099150B /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F4A3D1EEAB8720099150B /* CustomView.swift */; };
 		181F4A421EEACB330099150B /* ClickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F4A411EEACB330099150B /* ClickView.swift */; };
-		181F4A441EEAD8C70099150B /* Infomation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F4A431EEAD8C70099150B /* Infomation.swift */; };
+		181F4A441EEAD8C70099150B /* Information.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F4A431EEAD8C70099150B /* Information.swift */; };
 		18216A351EE7FAB8009D3396 /* PersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18216A341EE7FAB8009D3396 /* PersonViewController.swift */; };
 		18216A371EE83834009D3396 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18216A361EE83834009D3396 /* InfoViewController.swift */; };
 		182A09C71EE2D11F0036B91F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182A09C61EE2D11F0036B91F /* AppDelegate.swift */; };
@@ -22,6 +22,8 @@
 		182A09E71EE2E5320036B91F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182A09E61EE2E5320036B91F /* LoginViewController.swift */; };
 		182F909C1EE57E270001CE2D /* PlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182F909B1EE57E270001CE2D /* PlanViewController.swift */; };
 		182F909E1EE593290001CE2D /* ExerciseListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182F909D1EE593290001CE2D /* ExerciseListTableViewController.swift */; };
+		184888DE1EEBD00800056E7C /* CustomField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184888DD1EEBD00800056E7C /* CustomField.swift */; };
+		184888E21EEBDCEC00056E7C /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184888E11EEBDCEC00056E7C /* RegisterViewController.swift */; };
 		1886FDF21EE96F9500974B5F /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1886FDF01EE96F9500974B5F /* DetailTableViewCell.swift */; };
 		1886FDF31EE96F9500974B5F /* DetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1886FDF11EE96F9500974B5F /* DetailTableViewCell.xib */; };
 		1886FDF91EE9844300974B5F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1886FDF81EE9844300974B5F /* DetailViewController.swift */; };
@@ -50,7 +52,7 @@
 		181F4A3B1EEAB8430099150B /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		181F4A3D1EEAB8720099150B /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		181F4A411EEACB330099150B /* ClickView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClickView.swift; sourceTree = "<group>"; };
-		181F4A431EEAD8C70099150B /* Infomation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Infomation.swift; sourceTree = "<group>"; };
+		181F4A431EEAD8C70099150B /* Information.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Information.swift; sourceTree = "<group>"; };
 		18216A341EE7FAB8009D3396 /* PersonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonViewController.swift; sourceTree = "<group>"; };
 		18216A361EE83834009D3396 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		182A09C31EE2D11F0036B91F /* KeepFitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KeepFitness.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,6 +67,8 @@
 		182A09E61EE2E5320036B91F /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		182F909B1EE57E270001CE2D /* PlanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanViewController.swift; sourceTree = "<group>"; };
 		182F909D1EE593290001CE2D /* ExerciseListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseListTableViewController.swift; sourceTree = "<group>"; };
+		184888DD1EEBD00800056E7C /* CustomField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomField.swift; sourceTree = "<group>"; };
+		184888E11EEBDCEC00056E7C /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = ../RegisterViewController.swift; sourceTree = "<group>"; };
 		1886FDF01EE96F9500974B5F /* DetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailTableViewCell.swift; path = ../DetailTableViewCell.swift; sourceTree = "<group>"; };
 		1886FDF11EE96F9500974B5F /* DetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DetailTableViewCell.xib; path = ../DetailTableViewCell.xib; sourceTree = "<group>"; };
 		1886FDF81EE9844300974B5F /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +106,7 @@
 				181F4A3B1EEAB8430099150B /* CustomButton.swift */,
 				181F4A3D1EEAB8720099150B /* CustomView.swift */,
 				181F4A411EEACB330099150B /* ClickView.swift */,
+				184888DD1EEBD00800056E7C /* CustomField.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -124,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				182A09E61EE2E5320036B91F /* LoginViewController.swift */,
+				184888E11EEBDCEC00056E7C /* RegisterViewController.swift */,
 				182F909B1EE57E270001CE2D /* PlanViewController.swift */,
 				18A2933D1EE3EB4E0063846D /* ExerciseViewController.swift */,
 				18A293431EE40EFA0063846D /* ExerciseTableViewController.swift */,
@@ -140,7 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				18A2933F1EE3FE490063846D /* Exercise.swift */,
-				181F4A431EEAD8C70099150B /* Infomation.swift */,
+				181F4A431EEAD8C70099150B /* Information.swift */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -304,12 +310,14 @@
 				18A293401EE3FE490063846D /* Exercise.swift in Sources */,
 				18A2933E1EE3EB4E0063846D /* ExerciseViewController.swift in Sources */,
 				18E3999F1EE6E1210012FF7E /* InfoTableViewCell.swift in Sources */,
+				184888E21EEBDCEC00056E7C /* RegisterViewController.swift in Sources */,
 				181F4A3E1EEAB8720099150B /* CustomView.swift in Sources */,
 				182F909E1EE593290001CE2D /* ExerciseListTableViewController.swift in Sources */,
 				181F4A421EEACB330099150B /* ClickView.swift in Sources */,
-				181F4A441EEAD8C70099150B /* Infomation.swift in Sources */,
+				181F4A441EEAD8C70099150B /* Information.swift in Sources */,
 				1886FDF21EE96F9500974B5F /* DetailTableViewCell.swift in Sources */,
 				182F909C1EE57E270001CE2D /* PlanViewController.swift in Sources */,
+				184888DE1EEBD00800056E7C /* CustomField.swift in Sources */,
 				18216A351EE7FAB8009D3396 /* PersonViewController.swift in Sources */,
 				18A293421EE40C680063846D /* ExerciseListTableViewCell.swift in Sources */,
 				182A09C71EE2D11F0036B91F /* AppDelegate.swift in Sources */,

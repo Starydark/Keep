@@ -18,7 +18,7 @@ class Exercise: NSObject, NSCoding {
     var EndTime: String
     
     //static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
-    static let filePath: String = NSHomeDirectory() + LoginViewController().LoginId
+    static let filePath: String = NSHomeDirectory() + "/" + LoginViewController().LoginId
     
     static let URL = NSURL(string: filePath)
     static let ArchiverURL = URL?.appendingPathComponent("exercises")

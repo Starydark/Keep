@@ -92,6 +92,12 @@ class PersonViewController: UIViewController, UITableViewDelegate, UITableViewDa
         //self.navigationController?.pushViewController(viewCtl, animated: true)
         
     }
+    //MARK: Actions
+    //MARK: Navigation
+    
+    @IBAction func unwindToPeronView(sender: UIStoryboardSegue){
+        
+    }
     
     //创建各单元显示内容(创建参数indexPath指定的单元）
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)
