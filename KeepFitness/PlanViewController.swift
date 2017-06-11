@@ -59,9 +59,9 @@ class PlanViewController: UIViewController, UITableViewDelegate, UITableViewData
         return 90
     }
     
-    /*func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.performSegue(withIdentifier: "Show", sender: self)
-    }*/
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -109,11 +109,11 @@ class PlanViewController: UIViewController, UITableViewDelegate, UITableViewData
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        super.prepare(for: segue, sender: sender)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //super.prepare(for: segue, sender: sender)
         if segue.identifier == "Show"{
             let controller = segue.destination as! TimeViewController
         }
-    }*/
+    }
     
 }

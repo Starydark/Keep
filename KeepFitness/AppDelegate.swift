@@ -6,6 +6,7 @@
 //  Copyright © 2017年 nju. All rights reserved.
 //
 
+import UserNotifications
 import UIKit
 
 @UIApplicationMain
@@ -15,8 +16,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.sound, .alert, .badge]) { (granted, error) in
+            //func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNUserNotificationCenter, withCompletionHandler completionHandler: @escaping(UNNotificationPresentationOptions) -> Void)
+        }
         return true
+    }
+    
+    // app在前台运行时，收到通知会唤起该方法，但是前提是得 实现该方法 及 实现completionHandler
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Swift.Void){
+        print("categoryIdentifier: \(notification.request.content.categoryIdentifier)")
+        completionHandler(.alert)
+    }
+    
+    // 用户收到通知点击进入app的时候唤起，
+    @available(iOS 10.0, *)
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Swift.Void) {
+        let catogoryIdentifier = response.notification.request.content.categoryIdentifier
+        if catogoryIdentifier == "local_notification" {
+            // 根据事件的 identifier 来响应对应的通知点击事件
+            if response.actionIdentifier == "sure_action" {
+                print("response.actionIdentifier: sure_action")
+            }
+        }
+        completionHandler()
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -40,7 +64,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
+    
+    
 }
 

@@ -24,6 +24,9 @@
 		182F909E1EE593290001CE2D /* ExerciseListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182F909D1EE593290001CE2D /* ExerciseListTableViewController.swift */; };
 		184888DE1EEBD00800056E7C /* CustomField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184888DD1EEBD00800056E7C /* CustomField.swift */; };
 		184888E21EEBDCEC00056E7C /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184888E11EEBDCEC00056E7C /* RegisterViewController.swift */; };
+		184888E41EEC2C9B00056E7C /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184888E31EEC2C9B00056E7C /* NotificationViewController.swift */; };
+		184888E71EEC2E7100056E7C /* LocalNotifManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184888E61EEC2E7100056E7C /* LocalNotifManager.swift */; };
+		18526E7E1EED2D2D005CA40C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18526E7D1EED2D2D005CA40C /* ViewController.swift */; };
 		1886FDF21EE96F9500974B5F /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1886FDF01EE96F9500974B5F /* DetailTableViewCell.swift */; };
 		1886FDF31EE96F9500974B5F /* DetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1886FDF11EE96F9500974B5F /* DetailTableViewCell.xib */; };
 		1886FDF91EE9844300974B5F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1886FDF81EE9844300974B5F /* DetailViewController.swift */; };
@@ -69,6 +72,10 @@
 		182F909D1EE593290001CE2D /* ExerciseListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseListTableViewController.swift; sourceTree = "<group>"; };
 		184888DD1EEBD00800056E7C /* CustomField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomField.swift; sourceTree = "<group>"; };
 		184888E11EEBDCEC00056E7C /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = ../RegisterViewController.swift; sourceTree = "<group>"; };
+		184888E31EEC2C9B00056E7C /* NotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		184888E61EEC2E7100056E7C /* LocalNotifManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalNotifManager.swift; sourceTree = "<group>"; };
+		18526E7D1EED2D2D005CA40C /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		18526E7F1EED2D7D005CA40C /* Reminder_to_wear_watch.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Reminder_to_wear_watch.m4a; sourceTree = "<group>"; };
 		1886FDF01EE96F9500974B5F /* DetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailTableViewCell.swift; path = ../DetailTableViewCell.swift; sourceTree = "<group>"; };
 		1886FDF11EE96F9500974B5F /* DetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DetailTableViewCell.xib; path = ../DetailTableViewCell.xib; sourceTree = "<group>"; };
 		1886FDF81EE9844300974B5F /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -138,6 +145,7 @@
 				181F4A381EEA987E0099150B /* TimeViewController.swift */,
 				18216A361EE83834009D3396 /* InfoViewController.swift */,
 				1886FDF81EE9844300974B5F /* DetailViewController.swift */,
+				184888E31EEC2C9B00056E7C /* NotificationViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -172,6 +180,7 @@
 		182A09C51EE2D11F0036B91F /* KeepFitness */ = {
 			isa = PBXGroup;
 			children = (
+				184888E51EEC2E2900056E7C /* UserNotifications */,
 				181F4A401EEABA110099150B /* Controller */,
 				181F4A3F1EEAB9CC0099150B /* Cell */,
 				181F4A3A1EEAB8190099150B /* View */,
@@ -192,6 +201,16 @@
 				182A09DD1EE2D11F0036B91F /* Info.plist */,
 			);
 			path = KeepFitnessTests;
+			sourceTree = "<group>";
+		};
+		184888E51EEC2E2900056E7C /* UserNotifications */ = {
+			isa = PBXGroup;
+			children = (
+				184888E61EEC2E7100056E7C /* LocalNotifManager.swift */,
+				18526E7D1EED2D2D005CA40C /* ViewController.swift */,
+				18526E7F1EED2D7D005CA40C /* Reminder_to_wear_watch.m4a */,
+			);
+			name = UserNotifications;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -307,12 +326,15 @@
 				18216A371EE83834009D3396 /* InfoViewController.swift in Sources */,
 				181F4A3C1EEAB8430099150B /* CustomButton.swift in Sources */,
 				1886FDFC1EE996DE00974B5F /* ExerciseTableViewCell.swift in Sources */,
+				18526E7E1EED2D2D005CA40C /* ViewController.swift in Sources */,
 				18A293401EE3FE490063846D /* Exercise.swift in Sources */,
 				18A2933E1EE3EB4E0063846D /* ExerciseViewController.swift in Sources */,
 				18E3999F1EE6E1210012FF7E /* InfoTableViewCell.swift in Sources */,
 				184888E21EEBDCEC00056E7C /* RegisterViewController.swift in Sources */,
 				181F4A3E1EEAB8720099150B /* CustomView.swift in Sources */,
 				182F909E1EE593290001CE2D /* ExerciseListTableViewController.swift in Sources */,
+				184888E71EEC2E7100056E7C /* LocalNotifManager.swift in Sources */,
+				184888E41EEC2C9B00056E7C /* NotificationViewController.swift in Sources */,
 				181F4A421EEACB330099150B /* ClickView.swift in Sources */,
 				181F4A441EEAD8C70099150B /* Information.swift in Sources */,
 				1886FDF21EE96F9500974B5F /* DetailTableViewCell.swift in Sources */,

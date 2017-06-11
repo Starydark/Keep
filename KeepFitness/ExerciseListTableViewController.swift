@@ -48,7 +48,7 @@ class ExerciseListTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "StartExercise", sender: self)
+        self.performSegue(withIdentifier: "StartExercise", sender: self)    
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
