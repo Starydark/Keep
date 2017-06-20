@@ -17,12 +17,13 @@ class LeftTimeViewController: UIViewController {
     
     var exercises = [Exercise]()
     var exercise: Exercise?
-    
+    var exercisetime = 0
     
     var left = 5
-    //leftTime:Int = 60
     var totimes = 3
     var timer :Timer!
+    var time1 = 10
+    var time2 = 10
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +38,8 @@ class LeftTimeViewController: UIViewController {
         if let saveExercises = loadExercises() {
             exercises += saveExercises
         }
+        time1 = left
+        time2 = totimes
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -44,6 +47,18 @@ class LeftTimeViewController: UIViewController {
             exercises.append(exercise!)
             saveExercises()
             timer.invalidate()
+            if let saveTime = loadTime(){
+                exercisetime = saveTime
+                let real = (time2 - totimes) * time1 + time1 - left
+                exercisetime += real
+                saveTimes()
+            }
+            else {
+                exercisetime = 0
+                let real = (time2 - totimes) * time1 + time1 - left
+                exercisetime += real
+                saveTimes()
+            }
         }
     }
     
@@ -101,8 +116,22 @@ class LeftTimeViewController: UIViewController {
         return NSKeyedUnarchiver.unarchiveObject(withFile: (Exercise.HistroyArchiverURL.path)) as? [Exercise]
     }
     
+    private func loadTime() -> Int? {
+        return NSKeyedUnarchiver.unarchiveObject(withFile: (Information.XArchiverURL.path)) as? Int
+    }
+    
     private func saveExercises(){
         let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(exercises, toFile: (Exercise.HistroyArchiverURL.path))
+        if isSuccessfulSave {
+            os_log("Exerciseshistory successfully saved", log: OSLog.default, type: .debug)
+        }
+        else {
+            os_log("Failed to save exercises.", log: OSLog.default, type: .error)
+        }
+    }
+    
+    private func saveTimes(){
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(exercisetime, toFile: (Information.XArchiverURL.path))
         if isSuccessfulSave {
             os_log("Exerciseshistory successfully saved", log: OSLog.default, type: .debug)
         }

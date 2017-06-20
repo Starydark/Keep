@@ -98,12 +98,19 @@ class PlanViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let selectedIndexpath = tableView.indexPathForSelectedRow {
-            print("choose\(selectedIndexpath.row)")
+            if selectedIndexpath.row < exercises.count {
+                //print("choose\(selectedIndexpath.row)")
+                self.performSegue(withIdentifier: "StartExercise", sender: indexPath)
+            }
         }
         else {
-            print("choose\(indexPath.row)")
+            if indexPath.row < exercises.count {
+                self.performSegue(withIdentifier: "StartExercise", sender: indexPath)
+            }
+           // print("choose\(indexPath.row)")
         }
-        self.performSegue(withIdentifier: "StartExercise", sender: indexPath)
+        
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -185,13 +192,16 @@ class PlanViewController: UIViewController, UITableViewDelegate, UITableViewData
                 fatalError("The selected cell is not being displayed by the table")
             }
             print((indexPath as AnyObject).row)
-            
-            let selectedExercise = exercises[(indexPath as AnyObject).row]
-            if(selectedExercise == nil){
-                print("nil")
+            if((indexPath as AnyObject).row < exercises.count) {
+                let selectedExercise = exercises[(indexPath as AnyObject).row]
+                if(selectedExercise == nil){
+                    print("nil")
+                }
+                controller.exercise = selectedExercise
             }
-            controller.exercise = selectedExercise
-            
+            else {
+                return
+            }
         }
         else if segue.identifier == "Show" {
             let nav = segue.destination as! UINavigationController

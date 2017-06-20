@@ -156,7 +156,12 @@ class ExerciseTableViewController: UITableViewController {
                 let newIndexPath = IndexPath(row: exercises.count, section: 0)
                 exercises.append(exercise)
                 tableView.insertRows(at: [newIndexPath], with: .automatic)
-                localNotifiManager.setLocalNotification(with: exercise.StartTime, times: 1)
+                if(exercise.StartTime == "开始时间"){
+                    localNotifiManager.setLocalNotification(with: "12:34", times: 1)
+                }
+                else {
+                    localNotifiManager.setLocalNotification(with: exercise.StartTime, times: 1)
+                }
             }
             saveExercises()
         }
