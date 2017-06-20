@@ -54,7 +54,10 @@ class RatingControl: UIStackView {
             rating = 40
         }
         
-        let count = rating / 30
+        var count = rating / 30
+        if count > 5 {
+            count = 5
+        }
         
         for _ in 0..<count {
             let button = UIButton()
