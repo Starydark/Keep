@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KeepFitness/LoginViewController.swift"
-            timestampString = "518786934.759045"
+            timestampString = "518929719.049519"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
             landmarkName = "Login(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KeepFitness/PlanViewController.swift"
-            timestampString = "518705506.17509"
+            timestampString = "519649613.639561"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
+            startingLineNumber = "140"
+            endingLineNumber = "140"
             landmarkName = "unwindExerciseList(sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KeepFitness/PersonViewController.swift"
-            timestampString = "518520423.805579"
+            timestampString = "519646551.054239"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -106,11 +106,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KeepFitness/PersonViewController.swift"
-            timestampString = "518531733.088553"
+            timestampString = "519647268.653505"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
             landmarkName = "tableView(_:numberOfRowsInSection:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -122,11 +122,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KeepFitness/PersonViewController.swift"
-            timestampString = "518532441.162045"
+            timestampString = "519647268.653505"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
             landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -186,11 +186,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KeepFitness/TimeViewController.swift"
-            timestampString = "518701410.745866"
+            timestampString = "519574476.643443"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "12"
-            endingLineNumber = "12"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
             landmarkName = "TimeViewController"
             landmarkType = "3">
             <Locations>
@@ -295,11 +295,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "KeepFitness/PlanViewController.swift"
-            timestampString = "518711398.36143"
+            timestampString = "519649613.639561"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
+            startingLineNumber = "156"
+            endingLineNumber = "156"
             landmarkName = "loadExercises()"
             landmarkType = "7">
          </BreakpointContent>
@@ -500,12 +500,44 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RegisterViewController.swift"
-            timestampString = "518786583.551998"
+            timestampString = "519655268.616487"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
             landmarkName = "register(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RegisterViewController.swift"
+            timestampString = "519655268.616487"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
+            landmarkName = "register(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KeepFitness/TimeViewController.swift"
+            timestampString = "519649613.639561"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "viewWillDisappear(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

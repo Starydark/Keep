@@ -16,12 +16,15 @@ class Exercise: NSObject, NSCoding {
     var photo: UIImage?
     var StartTime: String
     var EndTime: String
+    var times = 0
+    var totaltimes = 0
     
-    //static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
-    static let filePath: String = NSHomeDirectory() + "/" + LoginViewController().LoginId
+    static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
+    static let filePath = DocumentsDirectory.appendingPathComponent(LoginViewController().LoginId)
     
-    static let URL = NSURL(string: filePath)
-    static let ArchiverURL = URL?.appendingPathComponent("exercises")
+    static let ArchiverURL = filePath.appendingPathComponent("exercises")
+    static let HistroyArchiverURL = filePath.appendingPathComponent("historyexercises")
+    
     
     struct Propertykey {
         static let Name = "Name"

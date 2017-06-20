@@ -41,10 +41,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
 
     //create foler to store info
     func CorrectPassword(name: String) -> Bool{
-        let filePath:String = NSHomeDirectory() + "/" + name;
-        let URL = NSURL(string: filePath)
-        let ArchiverURL = URL?.appendingPathComponent("password")
-        let GetPassword = NSKeyedUnarchiver.unarchiveObject(withFile: (ArchiverURL?.path)!) as? String
+        let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
+        let filePath = DocumentsDirectory.appendingPathComponent(name);
+        let ArchiverURL = filePath.appendingPathComponent("password")
+        let GetPassword = NSKeyedUnarchiver.unarchiveObject(withFile: (ArchiverURL.path)) as? String
         if GetPassword == PassWord.text {
             return true
         }
@@ -54,9 +54,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
     
     func UserExist(name: String) -> Bool {
         let fileManager = FileManager.default
-        let filePath:String = NSHomeDirectory() + "/" + name;
-        print(filePath)
-        let exist = fileManager.fileExists(atPath: filePath)
+        //let filePath:String = NSHomeDirectory() + "/" + name;
+        let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
+        let filePath = DocumentsDirectory.appendingPathComponent(name)
+        //print(filePath)
+        let exist = fileManager.fileExists(atPath: filePath.path)
         if exist {
             return true
         }
@@ -93,15 +95,28 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
         self.performSegue(withIdentifier: "Register", sender: self)
     }
   
+    @IBAction func unwindToLogin(sender: UIStoryboardSegue){
+        
+    }
     
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        super.prepare(for: segue, sender: sender)
+        switch (segue.identifier ?? "") {
+        case "Forget":
+            let controller = segue.destination as! RegisterViewController
+            controller.title = "忘记密码"
+        case "Register":
+            let controller = segue.destination as! RegisterViewController
+            controller.title = "注册"
+            controller.Register = true
+        default:
+            print(segue.identifier)
+        }
     }
-    */
+    
 
 }

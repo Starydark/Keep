@@ -1,0 +1,114 @@
+
+/* Class = "UITextField"; text = "结束时间"; ObjectID = "1Ep-du-10G"; */
+"1Ep-du-10G.text" = "结束时间";
+
+/* Class = "UIButton"; normalTitle = "暂停"; ObjectID = "3pI-MR-AHa"; */
+"3pI-MR-AHa.normalTitle" = "暂停";
+
+/* Class = "UITabBarItem"; title = "History"; ObjectID = "69c-YV-5B4"; */
+"69c-YV-5B4.title" = "History";
+
+/* Class = "UINavigationItem"; title = "锻炼"; ObjectID = "8pW-gh-fsM"; */
+"8pW-gh-fsM.title" = "锻炼";
+
+/* Class = "UITabBarItem"; title = "Plan"; ObjectID = "AVT-4H-jSJ"; */
+"AVT-4H-jSJ.title" = "Plan";
+
+/* Class = "UILabel"; text = "0.00 Miles"; ObjectID = "BvM-S9-vGN"; */
+"BvM-S9-vGN.text" = "0.00 Miles";
+
+/* Class = "UILabel"; text = "本周运动时长(分钟)"; ObjectID = "Dc4-PX-P5X"; */
+"Dc4-PX-P5X.text" = "本周运动时长(分钟)";
+
+/* Class = "UILabel"; text = "我的信息"; ObjectID = "IU0-Bz-5t2"; */
+"IU0-Bz-5t2.text" = "我的信息";
+
+/* Class = "UIButton"; normalTitle = "登陆"; ObjectID = "KQT-7u-VVj"; */
+"KQT-7u-VVj.normalTitle" = "登陆";
+
+/* Class = "UINavigationItem"; title = "新建计划"; ObjectID = "LbA-eR-BNr"; */
+"LbA-eR-BNr.title" = "新建计划";
+
+/* Class = "UIViewController"; title = "开始运动"; ObjectID = "LfD-C3-Czs"; */
+"LfD-C3-Czs.title" = "开始运动";
+
+/* Class = "UIButton"; normalTitle = "自定义训练"; ObjectID = "N5y-g5-BOR"; */
+"N5y-g5-BOR.normalTitle" = "自定义训练";
+
+/* Class = "UITextField"; text = "密码"; ObjectID = "SKc-7a-icb"; */
+"SKc-7a-icb.text" = "密码";
+
+/* Class = "UILabel"; text = "查看所有计划"; ObjectID = "U4W-UV-T8p"; */
+"U4W-UV-T8p.text" = "查看所有计划";
+
+/* Class = "UITextField"; text = "用户名"; ObjectID = "VKz-rd-NdO"; */
+"VKz-rd-NdO.text" = "用户名";
+
+/* Class = "UIButton"; normalTitle = "计时器"; ObjectID = "Vbm-Vw-gj4"; */
+"Vbm-Vw-gj4.normalTitle" = "计时器";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "bHJ-kS-kQ4"; */
+"bHJ-kS-kQ4.title" = "Item";
+
+/* Class = "UITextField"; text = "密码"; ObjectID = "cde-Ug-6me"; */
+"cde-Ug-6me.text" = "密码";
+
+/* Class = "UIButton"; normalTitle = "发送本地通知"; ObjectID = "d6U-5H-jE7"; */
+"d6U-5H-jE7.normalTitle" = "发送本地通知";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "dIr-jV-9T9"; */
+"dIr-jV-9T9.text" = "Label";
+
+/* Class = "UITextField"; text = "我的自定义训练"; ObjectID = "dNj-Jb-3dh"; */
+"dNj-Jb-3dh.text" = "我的自定义训练";
+
+/* Class = "UILabel"; text = "00:00:00"; ObjectID = "eJc-2n-Exo"; */
+"eJc-2n-Exo.text" = "00:00:00";
+
+/* Class = "UITextField"; text = "用户名"; ObjectID = "fuE-xR-o49"; */
+"fuE-xR-o49.text" = "用户名";
+
+/* Class = "UILabel"; text = "我的信息"; ObjectID = "gJh-HJ-dPU"; */
+"gJh-HJ-dPU.text" = "我的信息";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "gSB-Q9-X2i"; */
+"gSB-Q9-X2i.normalTitle" = "Button";
+
+/* Class = "UINavigationItem"; title = "我的计划"; ObjectID = "gx7-uz-RmS"; */
+"gx7-uz-RmS.title" = "我的计划";
+
+/* Class = "UITextField"; text = "确认密码"; ObjectID = "hEy-pw-4sN"; */
+"hEy-pw-4sN.text" = "确认密码";
+
+/* Class = "UITextField"; text = "训练动作"; ObjectID = "jUV-My-8lj"; */
+"jUV-My-8lj.text" = "训练动作";
+
+/* Class = "UITextField"; text = "开始时间"; ObjectID = "jhx-AH-F0D"; */
+"jhx-AH-F0D.text" = "开始时间";
+
+/* Class = "UIButton"; normalTitle = "跑步"; ObjectID = "l2E-fw-OY3"; */
+"l2E-fw-OY3.normalTitle" = "跑步";
+
+/* Class = "UIButton"; normalTitle = "忘记密码?"; ObjectID = "l78-Rj-rbq"; */
+"l78-Rj-rbq.normalTitle" = "忘记密码?";
+
+/* Class = "UIButton"; normalTitle = "完成"; ObjectID = "pYb-ej-pcD"; */
+"pYb-ej-pcD.normalTitle" = "完成";
+
+/* Class = "UIButton"; normalTitle = "开始"; ObjectID = "rJY-wf-CWR"; */
+"rJY-wf-CWR.normalTitle" = "开始";
+
+/* Class = "UINavigationItem"; title = "个人信息"; ObjectID = "sYN-NT-ZxD"; */
+"sYN-NT-ZxD.title" = "个人信息";
+
+/* Class = "UINavigationItem"; title = "自定义训练"; ObjectID = "tEK-Q5-oUZ"; */
+"tEK-Q5-oUZ.title" = "自定义训练";
+
+/* Class = "UIButton"; normalTitle = "新用户？"; ObjectID = "vNC-Zv-ple"; */
+"vNC-Zv-ple.normalTitle" = "新用户？";
+
+/* Class = "UINavigationItem"; title = "我"; ObjectID = "vzr-fH-pWX"; */
+"vzr-fH-pWX.title" = "我";
+
+/* Class = "UIButton"; normalTitle = "重置"; ObjectID = "zgJ-1K-PDJ"; */
+"zgJ-1K-PDJ.normalTitle" = "重置";

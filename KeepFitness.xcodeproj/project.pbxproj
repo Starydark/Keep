@@ -32,12 +32,18 @@
 		1886FDF91EE9844300974B5F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1886FDF81EE9844300974B5F /* DetailViewController.swift */; };
 		1886FDFC1EE996DE00974B5F /* ExerciseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1886FDFA1EE996DE00974B5F /* ExerciseTableViewCell.swift */; };
 		1886FDFD1EE996DE00974B5F /* ExerciseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1886FDFB1EE996DE00974B5F /* ExerciseTableViewCell.xib */; };
+		188FF69E1EF7F1D500C4210B /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188FF69D1EF7F1D500C4210B /* HistoryTableViewController.swift */; };
 		18A2933E1EE3EB4E0063846D /* ExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A2933D1EE3EB4E0063846D /* ExerciseViewController.swift */; };
 		18A293401EE3FE490063846D /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A2933F1EE3FE490063846D /* Exercise.swift */; };
 		18A293421EE40C680063846D /* ExerciseListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A293411EE40C680063846D /* ExerciseListTableViewCell.swift */; };
 		18A293441EE40EFA0063846D /* ExerciseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A293431EE40EFA0063846D /* ExerciseTableViewController.swift */; };
 		18E3999F1EE6E1210012FF7E /* InfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E3999D1EE6E1210012FF7E /* InfoTableViewCell.swift */; };
 		18E399A01EE6E1210012FF7E /* InfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18E3999E1EE6E1210012FF7E /* InfoTableViewCell.xib */; };
+		18FBE4B51EF8B6E300E54E5A /* HourTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FBE4B41EF8B6E300E54E5A /* HourTableViewController.swift */; };
+		18FBE4B71EF8CD7700E54E5A /* LeftTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FBE4B61EF8CD7700E54E5A /* LeftTimeViewController.swift */; };
+		18FBE4B91EF93D7600E54E5A /* TotalTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FBE4B81EF93D7600E54E5A /* TotalTimeViewController.swift */; };
+		18FBE4BD1EF9459F00E54E5A /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FBE4BC1EF9459F00E54E5A /* RatingControl.swift */; };
+		18FBE4BF1EF94BA900E54E5A /* HonorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FBE4BE1EF94BA900E54E5A /* HonorViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,12 +87,18 @@
 		1886FDF81EE9844300974B5F /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		1886FDFA1EE996DE00974B5F /* ExerciseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseTableViewCell.swift; sourceTree = "<group>"; };
 		1886FDFB1EE996DE00974B5F /* ExerciseTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExerciseTableViewCell.xib; sourceTree = "<group>"; };
+		188FF69D1EF7F1D500C4210B /* HistoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
 		18A2933D1EE3EB4E0063846D /* ExerciseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseViewController.swift; sourceTree = "<group>"; };
 		18A2933F1EE3FE490063846D /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		18A293411EE40C680063846D /* ExerciseListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseListTableViewCell.swift; sourceTree = "<group>"; };
 		18A293431EE40EFA0063846D /* ExerciseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseTableViewController.swift; sourceTree = "<group>"; };
 		18E3999D1EE6E1210012FF7E /* InfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoTableViewCell.swift; sourceTree = "<group>"; };
 		18E3999E1EE6E1210012FF7E /* InfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InfoTableViewCell.xib; sourceTree = "<group>"; };
+		18FBE4B41EF8B6E300E54E5A /* HourTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HourTableViewController.swift; sourceTree = "<group>"; };
+		18FBE4B61EF8CD7700E54E5A /* LeftTimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftTimeViewController.swift; sourceTree = "<group>"; };
+		18FBE4B81EF93D7600E54E5A /* TotalTimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TotalTimeViewController.swift; sourceTree = "<group>"; };
+		18FBE4BC1EF9459F00E54E5A /* RatingControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
+		18FBE4BE1EF94BA900E54E5A /* HonorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HonorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +158,12 @@
 				18216A361EE83834009D3396 /* InfoViewController.swift */,
 				1886FDF81EE9844300974B5F /* DetailViewController.swift */,
 				184888E31EEC2C9B00056E7C /* NotificationViewController.swift */,
+				188FF69D1EF7F1D500C4210B /* HistoryTableViewController.swift */,
+				18FBE4B41EF8B6E300E54E5A /* HourTableViewController.swift */,
+				18FBE4B61EF8CD7700E54E5A /* LeftTimeViewController.swift */,
+				18FBE4B81EF93D7600E54E5A /* TotalTimeViewController.swift */,
+				18FBE4BE1EF94BA900E54E5A /* HonorViewController.swift */,
+				18FBE4BC1EF9459F00E54E5A /* RatingControl.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -323,6 +341,7 @@
 				1886FDF91EE9844300974B5F /* DetailViewController.swift in Sources */,
 				181F4A391EEA987E0099150B /* TimeViewController.swift in Sources */,
 				182A09E71EE2E5320036B91F /* LoginViewController.swift in Sources */,
+				18FBE4B71EF8CD7700E54E5A /* LeftTimeViewController.swift in Sources */,
 				18216A371EE83834009D3396 /* InfoViewController.swift in Sources */,
 				181F4A3C1EEAB8430099150B /* CustomButton.swift in Sources */,
 				1886FDFC1EE996DE00974B5F /* ExerciseTableViewCell.swift in Sources */,
@@ -335,15 +354,20 @@
 				182F909E1EE593290001CE2D /* ExerciseListTableViewController.swift in Sources */,
 				184888E71EEC2E7100056E7C /* LocalNotifManager.swift in Sources */,
 				184888E41EEC2C9B00056E7C /* NotificationViewController.swift in Sources */,
+				18FBE4B51EF8B6E300E54E5A /* HourTableViewController.swift in Sources */,
 				181F4A421EEACB330099150B /* ClickView.swift in Sources */,
+				18FBE4B91EF93D7600E54E5A /* TotalTimeViewController.swift in Sources */,
 				181F4A441EEAD8C70099150B /* Information.swift in Sources */,
 				1886FDF21EE96F9500974B5F /* DetailTableViewCell.swift in Sources */,
 				182F909C1EE57E270001CE2D /* PlanViewController.swift in Sources */,
 				184888DE1EEBD00800056E7C /* CustomField.swift in Sources */,
+				18FBE4BF1EF94BA900E54E5A /* HonorViewController.swift in Sources */,
 				18216A351EE7FAB8009D3396 /* PersonViewController.swift in Sources */,
 				18A293421EE40C680063846D /* ExerciseListTableViewCell.swift in Sources */,
 				182A09C71EE2D11F0036B91F /* AppDelegate.swift in Sources */,
+				18FBE4BD1EF9459F00E54E5A /* RatingControl.swift in Sources */,
 				18A293441EE40EFA0063846D /* ExerciseTableViewController.swift in Sources */,
+				188FF69E1EF7F1D500C4210B /* HistoryTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

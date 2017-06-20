@@ -151,7 +151,7 @@ class InfoViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     //MARK: Private Methods
     private func saveInfo(){
-        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(info, toFile: (Information.ArchiverURL?.path)!)
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(info, toFile: (Information.ArchiverURL.path))
         if isSuccessfulSave{
             os_log("Information successfully saved", log: OSLog.default, type: .debug)
         }
@@ -161,7 +161,7 @@ class InfoViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     private func loadInfo() -> Information? {
-        return NSKeyedUnarchiver.unarchiveObject(withFile: (Information.ArchiverURL?.path)!) as? Information
+        return NSKeyedUnarchiver.unarchiveObject(withFile: (Information.ArchiverURL.path)) as? Information
     }
     
     private func InitInfo(){

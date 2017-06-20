@@ -17,6 +17,8 @@ class RegisterViewController: UIViewController, UITextFieldDelegate{
     @IBOutlet weak var password1: CustomField!
     @IBOutlet weak var regButton: CustomButton!
     
+    var Register = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         name.delegate = self
@@ -45,12 +47,19 @@ class RegisterViewController: UIViewController, UITextFieldDelegate{
     func textFieldDidEndEditing(_ textField: UITextField) {
         if self.name == textField {
             if userExist() {
-                var alert = UIAlertView(title: "错误", message: "用户名已经存在", delegate: self, cancelButtonTitle: "OK")
-                alert.show()
-                password.isEnabled = false
-                password1.isEnabled = false
+                if(Register) {
+                    let alert = UIAlertView(title: "错误", message: "用户名已经存在", delegate: self, cancelButtonTitle: "OK")
+                    alert.show()
+                    password.isEnabled = false
+                    password1.isEnabled = false
+                }
+            
             }
             else {
+                if(!Register) {
+                    let alert = UIAlertView(title: "错误", message: "用户名不存在", delegate: self, cancelButtonTitle: "OK")
+                    alert.show()
+                }
                 let userid = name.text ?? ""
                 password.isEnabled = !userid.isEmpty
                 let pw = password.text ?? ""
@@ -86,11 +95,19 @@ class RegisterViewController: UIViewController, UITextFieldDelegate{
         let pw1 = password.text ?? ""
         let pw2 = password1.text ?? ""
         var error: Bool = true
-        var lenght = pw1.characters.count
+        let lenght = pw1.characters.count
         if userid.isEmpty {
             let alert = UIAlertView(title: "错误", message: "用户名不能为空", delegate: self, cancelButtonTitle: "OK")
             alert.show()
             error = false
+        }
+        else if(userExist() && Register){
+            let alert = UIAlertView(title: "错误", message: "用户名已经存在", delegate: self, cancelButtonTitle: "OK")
+            alert.show()
+        }
+        else if (!userExist() && !Register) {
+            let alert = UIAlertView(title: "错误", message: "用户名不存在", delegate: self, cancelButtonTitle: "OK")
+            alert.show()
         }
         else if lenght < 6 {
             let alert = UIAlertView(title: "错误", message: "密码长度必须大于6个字符", delegate: self, cancelButtonTitle: "OK")
@@ -102,16 +119,37 @@ class RegisterViewController: UIViewController, UITextFieldDelegate{
             alert.show()
             error = false
         }
-        if error {
-            createFolder()
-            self.performSegue(withIdentifier: "RegSuccess", sender: self)
+        if error == true {
+            if(Register) {
+                createFolder()
+                self.performSegue(withIdentifier: "RegSuccess", sender: self)
+            }
+            else {
+                let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
+                let filePath = DocumentsDirectory.appendingPathComponent(name.text!)
+                let ArchiverURL = filePath.appendingPathComponent("password")
+                let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(password1.text, toFile: (ArchiverURL.path))
+                if isSuccessfulSave{
+                    os_log("password successfully changed", log: OSLog.default, type: .debug)
+                }
+                else {
+                    os_log("password to save informations.", log: OSLog.default, type: .error)
+                }
+                self.performSegue(withIdentifier: "RegSuccess", sender: self)
+            }
+        }
+        else {
+            print("false")
         }
     }
     
     func userExist() -> Bool{
         let fileManager = FileManager.default
-        let filePath:String = NSHomeDirectory() + "/" + name.text!;
-        let exist = fileManager.fileExists(atPath: filePath)
+        let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
+        //let DocumentsString = DocumentsDirectory.path
+        let filePath = DocumentsDirectory.appendingPathComponent(name.text!)
+        //let filePath:String = NSHomeDirectory() + "/" + name.text!;
+        let exist = fileManager.fileExists(atPath: filePath.path)
         if exist {
             return true
         }
@@ -122,15 +160,19 @@ class RegisterViewController: UIViewController, UITextFieldDelegate{
     
     func createFolder(){
         let fileManager = FileManager.default
-        let filePath:String = NSHomeDirectory() + "/" + name.text!;
-        let exist = fileManager.fileExists(atPath: filePath)
+        let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
+        let filePath = DocumentsDirectory.appendingPathComponent(name.text!)
+        //let filePath:String = NSHomeDirectory() + "/" + name.text!;
+        print(name.text)
+        print(filePath)
+        let exist = fileManager.fileExists(atPath: filePath.path)
         if !exist {
-            try! fileManager.createDirectory(atPath: filePath, withIntermediateDirectories: true, attributes: nil)
+            try! fileManager.createDirectory(atPath: filePath.path, withIntermediateDirectories: true, attributes: nil)
             print("创建目录成功")
         }
-        let URL = NSURL(string: filePath)
-        let ArchiverURL = URL?.appendingPathComponent("password")
-        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(password1.text, toFile: (ArchiverURL?.path)!)
+        //let URL = NSURL(string: filePath)
+        let ArchiverURL = filePath.appendingPathComponent("password")
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(password1.text, toFile: (ArchiverURL.path))
         if isSuccessfulSave{
             os_log("password successfully saved", log: OSLog.default, type: .debug)
         }

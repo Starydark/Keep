@@ -15,6 +15,7 @@ class ExerciseTableViewController: UITableViewController {
     var exercises = [Exercise]()
     @IBOutlet weak var back: UIBarButtonItem!
     let cellIdentifier = "ExerciseID"
+    let localNotifiManager = LocalNotifManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +25,7 @@ class ExerciseTableViewController: UITableViewController {
             exercises += saveExercises
         }
         else {
-            loadSampleExercise()
+           // loadSampleExercise()
         }
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -152,10 +153,10 @@ class ExerciseTableViewController: UITableViewController {
                 tableView.reloadRows(at: [selectedIndexpath], with: .none)
             }
             else {
-                //Add a new Exercise
                 let newIndexPath = IndexPath(row: exercises.count, section: 0)
                 exercises.append(exercise)
                 tableView.insertRows(at: [newIndexPath], with: .automatic)
+                localNotifiManager.setLocalNotification(with: exercise.StartTime, times: 1)
             }
             saveExercises()
         }
@@ -166,7 +167,7 @@ class ExerciseTableViewController: UITableViewController {
     
     //MARK: Private Methods
     private func saveExercises(){
-        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(exercises, toFile: (Exercise.ArchiverURL?.path)!)
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(exercises, toFile: (Exercise.ArchiverURL.path))
         if isSuccessfulSave {
             os_log("Exercises successfully saved", log: OSLog.default, type: .debug)
         }
@@ -176,7 +177,7 @@ class ExerciseTableViewController: UITableViewController {
     }
     
     private func loadExercises() -> [Exercise]? {
-        return NSKeyedUnarchiver.unarchiveObject(withFile: (Exercise.ArchiverURL?.path)!) as? [Exercise]
+        return NSKeyedUnarchiver.unarchiveObject(withFile: (Exercise.ArchiverURL.path)) as? [Exercise]
     }
     
     private func loadSampleExercise() {

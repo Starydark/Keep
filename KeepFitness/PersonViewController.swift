@@ -10,13 +10,15 @@ import UIKit
 
 class PersonViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var tableData1 = [["title":"个人信息","image":"exercise1"]]
-    var tableData2 = [["title":"运动历史","image":"exercise1"],
-                     ["title":"运动总长","image":"exercise1"],
-                     ["title":"训练列表","image":"exercise1"],
-                     ["title":"设置","image":"exercise1"]]
+    var tableData1 = [["title":"个人信息","image":"Username"]]
+    var tableData2 = [["title":"运动历史","image":"history"],
+                     ["title":"运动总长","image":"total"],
+                     ["title":"我的勋章","image":"list"]]
     
     var tableView:UITableView?
+    
+    var button:UIButton?
+
     
     override func loadView() {
         super.loadView()
@@ -30,6 +32,7 @@ class PersonViewController: UIViewController, UITableViewDelegate, UITableViewDa
                                      style:.plain)
         self.tableView!.delegate = self
         self.tableView!.dataSource = self
+        //self.tableView?.frame = CGRect(x: 0, y: 0, width: 400, height: 380)
         //设置表格背景色
         self.tableView!.backgroundColor = UIColor(red: 0xf0/255, green: 0xf0/255,
                                                   blue: 0xf0/255, alpha: 1)
@@ -41,6 +44,21 @@ class PersonViewController: UIViewController, UITableViewDelegate, UITableViewDa
                                     forCellReuseIdentifier:"InfoListID")
         
         self.view.addSubview(self.tableView!)
+        button = UIButton(type: .system)
+        button?.frame = CGRect(x: 0, y: 380, width: 320, height: 40)
+        button?.setTitle("退出登录", for: .normal)
+        button?.backgroundColor = UIColor.red
+        button?.addTarget(self, action: #selector(self.tapped), for: .touchUpInside)
+        self.tableView?.addSubview(button!)
+    }
+    
+    func tapped() {
+        //print("tapped")
+        self.performSegue(withIdentifier: "Logout", sender: self)
+    }
+    
+    @IBAction func Logout(sender: AnyObject){
+        
     }
     
     //在本例中，只有一个分区
@@ -88,7 +106,12 @@ class PersonViewController: UIViewController, UITableViewDelegate, UITableViewDa
         else if cell.cellName.text == "运动历史" {
             self.performSegue(withIdentifier: "ShowTable", sender: cell.cellName.text)
         }
-        
+        else if cell.cellName.text == "运动总长" {
+            self.performSegue(withIdentifier: "ShowTotal", sender: cell.cellName.text)
+        }
+        else if cell.cellName.text == "我的勋章" {
+            self.performSegue(withIdentifier: "ShowHonor", sender: cell.cellName.text)
+        }
         //self.navigationController?.pushViewController(viewCtl, animated: true)
         
     }
@@ -133,11 +156,16 @@ class PersonViewController: UIViewController, UITableViewDelegate, UITableViewDa
             controller.title = sender as? String
         }
         else if segue.identifier == "ShowTable" {
-            let controller = segue.destination as! ExerciseTableViewController
+            let controller = segue.destination as! HistoryTableViewController
             controller.title = sender as? String
         }
-        else {
-            print(segue.identifier)
+        else if segue.identifier == "ShowTotal"{
+            let controller = segue.destination as! TotalTimeViewController
+            controller.title = sender as? String
+        }
+        else if segue.identifier == "ShowHonor"{
+            let controller = segue.destination as! HonorViewController
+            controller.title = sender as? String
         }
     }
     

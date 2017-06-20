@@ -16,18 +16,33 @@ class PlanViewController: UIViewController, UITableViewDelegate, UITableViewData
     //@IBOutlet weak var clickView: ClickView!
    //  @IBOutlet weak var LoadExercise: UITableView!
     @IBOutlet weak var clickView: UIView!
+    //@IBOutlet weak var running: UIButton!
+    @IBOutlet weak var exe: UIButton!
+    @IBOutlet weak var hour: UIButton!
+    @IBOutlet weak var totaltime: UILabel!
     
     
     var exercises = [Exercise]()
     let cellIdentifier = "ExerciseID"
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.ExerciseCell!.delegate = self
         self.ExerciseCell!.dataSource = self
         
+        //running.layer.cornerRadius = 15.0
+        //running.layer.borderWidth = 1.0
+        
+        exe.layer.cornerRadius = 15.0
+        exe.layer.borderWidth = 1.0
+        
+        hour.layer.cornerRadius = 15.0
+        hour.layer.borderWidth = 1.0
+        
+        clickView.isUserInteractionEnabled = true
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.tapGestureAction))
+        
+        clickView.addGestureRecognizer(tapGesture)
         //let tap = UITapGestureRecognizer(target: self, action: Selector(("tapClick")))
         //self.clickView.isUserInteractionEnabled = true
         //self.clickView.addGestureRecognizer(tap)
@@ -37,8 +52,30 @@ class PlanViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.ExerciseCell.register(UINib(nibName: "ExerciseTableViewCell", bundle: nil), forCellReuseIdentifier: cellIdentifier)
         //self.LoadExercise.register(UINib(nibName: "DetailTableViewCell"), bundle: nil), forCellReuseIdentifier: "
         if let saveExercises = loadExercises() {
-            exercises = saveExercises
+            if(saveExercises.count == 0) {
+                loadSample()
+            
+            }
+            else{
+                exercises += saveExercises
+            }
+    
         }
+        else {
+            loadSample()
+        }
+        if let saveTime = loadTime() {
+            totaltime.text = String(saveTime / 60)
+        }
+        else {
+            totaltime.text = "0"
+        }
+        
+    }
+    
+    func tapGestureAction() {
+        self.performSegue(withIdentifier: "Show", sender: nil)
+        print("yes")
     }
 
     override func didReceiveMemoryWarning() {
@@ -60,7 +97,13 @@ class PlanViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "Show", sender: self)
+        if let selectedIndexpath = tableView.indexPathForSelectedRow {
+            print("choose\(selectedIndexpath.row)")
+        }
+        else {
+            print("choose\(indexPath.row)")
+        }
+        self.performSegue(withIdentifier: "StartExercise", sender: indexPath)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -98,22 +141,71 @@ class PlanViewController: UIViewController, UITableViewDelegate, UITableViewData
             exercises = saveExercises
         }
         self.ExerciseCell.reloadData()
-       
+        if exercises.count == 0{
+            loadSample()
+        }
+        if let saveTime = loadTime() {
+            totaltime.text = String(saveTime / 60)
+        }
+        else {
+            totaltime.text = "0"
+        }
     }
     
     private func loadExercises() -> [Exercise]? {
-        return NSKeyedUnarchiver.unarchiveObject(withFile: (Exercise.ArchiverURL?.path)!) as? [Exercise]
+        return NSKeyedUnarchiver.unarchiveObject(withFile: (Exercise.ArchiverURL.path)) as? [Exercise]
     }
     
+    private func loadTime() -> Int? {
+        return NSKeyedUnarchiver.unarchiveObject(withFile: (Information.XArchiverURL.path)) as? Int
+    }
+    
+    private func loadSample(){
+        let photo = UIImage(named: "keep")
+        let photo1 = UIImage(named: "go")
+        
+        guard let exercise1 = Exercise(Name: "分段跑强化燃脂", photo: photo, Action: "分段跑", StartTime: " ", EndTime: " ") else {
+            fatalError("Unable to instantiate exercise1")
+        }
+        guard let exercise2 = Exercise(Name: "初学者必备", photo: photo1, Action: "慢跑", StartTime: "", EndTime: "") else {
+            fatalError("Unable to instantiate exercise1")
+        }
+        print("load successful")
+        exercises += [exercise2, exercise1]
+    }
     
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //super.prepare(for: segue, sender: sender)
-        if segue.identifier == "Show"{
+        super.prepare(for: segue, sender: sender)
+        if segue.identifier == "StartExercise" {
             let controller = segue.destination as! TimeViewController
+            guard let indexPath = sender else {
+                fatalError("The selected cell is not being displayed by the table")
+            }
+            print((indexPath as AnyObject).row)
+            
+            let selectedExercise = exercises[(indexPath as AnyObject).row]
+            if(selectedExercise == nil){
+                print("nil")
+            }
+            controller.exercise = selectedExercise
+            
+        }
+        else if segue.identifier == "Show" {
+            let nav = segue.destination as! UINavigationController
+            let controller = nav.topViewController as! ExerciseListTableViewController
+            //controller.title = sender as? String
+        }
+        else if segue.identifier == "Time" {
+            let nav = segue.destination as! UINavigationController
+            let controller = nav.topViewController as! HourTableViewController
+            print("计时器")
+            controller.title = "计时器"
         }
     }
     
+    
 }
+

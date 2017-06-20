@@ -19,10 +19,10 @@ class Information: NSObject, NSCoding {
     var height: String?
     var weight: String?
  
-    static let filePath: String = NSHomeDirectory() + "/" + LoginViewController().LoginId
-    static let URL = NSURL(string: filePath)
-    static let ArchiverURL = URL?.appendingPathComponent("information")
-    
+    static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
+    static let filePath = DocumentsDirectory.appendingPathComponent(LoginViewController().LoginId)
+    static let ArchiverURL = filePath.appendingPathComponent("information")
+    static let XArchiverURL = filePath.appendingPathComponent("honor")
     
     struct Propertykey {
         static let nickName = "nickName"
